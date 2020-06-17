@@ -105,24 +105,25 @@ function setup()
         ];
     
     collectables = [{
-        x_pos: 550,
-        y_pos: floorPos_y-10,
+        x_pos: 400,
+        y_pos: floorPos_y-12,
         scale: 1,
         isFound: false},
         {
         x_pos: 1500,
-        y_pos: floorPos_y-10,
+        y_pos: floorPos_y-12,
         scale: 1,
         isFound: false},
         {
         x_pos: 2340,
-        y_pos: floorPos_y-10,
+        y_pos: floorPos_y-12,
         scale: 1,
         isFound: false}];
 }
 
 function draw()
 {
+
 	background(230,230,250); //fill the sky 
     noStroke();
 	fill(174,194,220);
@@ -134,7 +135,6 @@ function draw()
     fill(255,228,225, 45); // ambient "light"
     ellipse(740, 50, 1000, 750);
     noFill();
-    
     push();
     
     translate(scrollPos,0);
@@ -200,10 +200,11 @@ function draw()
     for(var i=0; i < collectables.length; i++){
         if(!collectables[i].isFound){
         //collectable item, a diamant ring
-        fill(255, 215, 0);
+        noFill();
+        stroke(255, 215, 0);
+        strokeWeight(3);
         ellipse(collectables[i].x_pos, collectables[i].y_pos, 25*collectables[i].scale, 25*collectables[i].scale);
-        fill(230,230,250);
-        ellipse(collectables[i].x_pos, collectables[i].y_pos, 20*collectables[i].scale, 20*collectables[i].scale);
+        noStroke();
         fill(0,191,255);
         quad(collectables[i].x_pos-15*collectables[i].scale, 
              collectables[i].y_pos-18*collectables[i].scale, 
