@@ -122,8 +122,8 @@ function setup()
 }
 
 function draw()
-{
-
+{   
+    //my environment, different design
 	background(230,230,250); //fill the sky 
     noStroke();
 	fill(174,194,220);
@@ -135,8 +135,8 @@ function draw()
     fill(255,228,225, 45); // ambient "light"
     ellipse(740, 50, 1000, 750);
     noFill();
+
     push();
-    
     translate(scrollPos,0);
     
 	// Draw clouds[i]s.
@@ -197,7 +197,7 @@ function draw()
     }
 
 	// Draw collectable items
-    for(var i=0; i < collectables.length; i++){
+    for(var i = 0; i < collectables.length; i++){
         if(!collectables[i].isFound){
         //collectable item, a diamant ring
         noFill();
